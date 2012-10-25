@@ -1,3 +1,9 @@
+---
+layout: "/_layout.html.haml"
+...
+
+# Pith: tools all the way down.
+
 While we all like to work in [craftsman's time](http://www.lukew.com/ff/entry.asp?1603), it's equally important for us to use, develop and integrate tools into our work which help us focus on the real problems we're trying to solve.
 
 Beginners can find using these tools cumbersome, unwieldy and sometimes a frustrating diversion from practicing the fundamental aspects of their work. Experienced developers either go looking for or develop tools which can help elevate them from the repetition of basics and back into the realm of the core problem.
@@ -18,10 +24,11 @@ When you're working with Pith, you can build your templates on demand. You can t
 
 Once you're done, you can drop the contents of your generated work straight onto your production web server. Home in time for nuts and beer.
 
-** **Bootstrapping (nerd speak for getting-started)**
+## Bootstrapping (nerd speak for getting-started)
 
 In your favourite Ruby environment;
-> gem install pith
+
+    $ gem install pith
 
 Now you can follow the instructions on the helpful Pith website to get your environment set up. You'll need Ruby for sure, but once you install Pith, it comes with all the nifty bits and bobs to help you rapidly build out your ideas.
 
@@ -29,80 +36,85 @@ The flexibility granted by using Pith is one of its greatest features. You can s
 
 You can create a starting directory for your project, say `my-site` and inside that you add some files.
 
-		my-site/
-			_pith/
-			images/
-				logo.png
-			index.html.haml
+    my-site/
+      _pith/
+      images/
+        logo.png
+      index.html.haml
 
 Notice the _pith directory? That's there to hold any configuration files or Ruby scripts you might want to create later. It doesn't get included in your output directory.
 
 Once you've edited your files, you can run the `pith build` command to generate your website.
 
-		$ pith -i my-site build
-		Generating to "my-site/_out"
-					--(copy)-->   images/logo.png
-					--(haml)-->   index.html
+    $ pith -i my-site build
+    Generating to "my-site/_out"
+    --(copy)-->   images/logo.png
+    --(haml)-->   index.html
 
 The sauce that makes Pith great is the inclusion of other great tools which make web development more fun!
 
-**SASS**
+### SASS
+
 SASS *is* awesome. It is such a nifty way to work with, extend and rock CSS. Last year, David Demaree wrote a wonderful [getting started guide to sass](http://www.alistapart.com/articles/getting-started-with-sass/) on A List Apart, and you should totally read it. The best bits though are being able to  include variables and mixins into your css awesome!
 
 You can use variables to declare things like colours
 
-		$corporate-red: #AF1210
+    $corporate-red: #AF1210
 
 And you can declare mixins so you can avoid repeating yourself over and over again
 
-		@mixin fade-to-corporate-red
-			background-color: $corporate-red
+    @mixin fade-to-corporate-red
+      background-color: $corporate-red
       -webkit-transition: background-color 0.25s ease-in-out
       -moz-transition: background-color 0.25s ease-in-out
       -o-transition: background-color 0.25s ease-in-out
       transition: background-color 0.25s ease-in-out
 
-**HAML**
+### HAML
+
 HAML doesn't get quite as much press as SASS, but it is no less awesome. It uses a strict nesting pattern, like SASS, yet using it doesn't feel like working for an angry boss — using HAML is *fun*. I like to use it because my HTML templates are much nicer to look at. Shallow I know — but hey, if I have to look at this stuff all the time, I might as well enjoy it.
 
 [Don't Repeat Yourself](http://en.wikipedia.org/wiki/Don't_repeat_yourself) is a simple mantra, and it can require a bit of discipline to follow. Tools like HAML encourage you to practice a little DRY coding, simply by not having to close your tags and using strict indenting.
 
     %section.container
       %h1 Coding is awesome
-			%h2 When you're using HAML
+      %h2 When you're using HAML
         .content
           There are some great examples of using HAML, you
           should check them out.
-				#video-box
+        #video-box
 
-There is a lot to take in here. 
+There is a lot to take in here.
 
-Tags are prefixed with a percent character, you can append those tags with a dot-chained list of the classes that those tags will use. 
+Tags are prefixed with a percent character, you can append those tags with a dot-chained list of the classes that those tags will use.
 
 HAML will assume that you mean `<div class="content">` if you start a block of code with `.content`. HAML will also assume that you mean '<div id="video-box">` if you start a block of code with `#video-box` — so cool. Less typing, more fun.
 
-** **Taking names and kickin' butt**
 
-**Layouts**
+## Taking names and kickin' butt
+
+### Layouts
+
 Pith allows you to set much of your designs in layouts, which then can wrap your individual pages.
 
 By creating a `my-layout.haml` document and then inserting the following extra information (meta-data) in the top of your template your page will be processed with that layout.
 
-					---
-		layout: "/my-layout.haml"
-		...
+    ---
+    layout: "/my-layout.haml"
+    ...
 
-**Partials**
+### Partials
+
 By using partials and pulling out common chunks of code you can keep your templates nice and tidy.
 
     %nav.horizontal
       %ul
-				%li
-        	%a{ href: "index.html" } Home
-				%li
-        	%a{ href: "about.html" } About Us
-				%li
-        	%a{ href: "monkeys.html" } Our Monkeys
+        %li
+          %a{ href: "index.html" } Home
+        %li
+          %a{ href: "about.html" } About Us
+        %li
+          %a{ href: "monkeys.html" } Our Monkeys
 
 Instead of pasting that on all your pages, you can extract that code out into a partial — a file named "_navigation.haml" placed in a folder called "common" and easily include in your templates it by writing;
 
@@ -110,13 +122,27 @@ Instead of pasting that on all your pages, you can extract that code out into a 
 
 C'mon! — that's fun. You can do the same with your SASS (as you always have with CSS) to prevent them from becoming 3000 line behemoths by breaking them up into concise 200 line files of readable code.
 
-**Getting clever: Ruby Code**
 
-In your `_pith/` directory you can include any number of Ruby scripts which you might use to perform functions when your HAML is processed.
+## Getting clever: Ruby
 
-Here's a simple example that you might 
+In your `_pith/` directory you can place a config.rb file into which you can include a number of nifty helpers which can run when the partials are generated.
+
+Here's a simple example;
+
+    project.helpers do
+
+      def published_note
+        time_now = Time.now()
+        "Published on #{time_now.strftime("%d %B %Y")}"
+      end
+
+    end
+
+Which you can then include in your HAML templates;
 
 
+    %footer
 
-
-
+      %p
+        Written by Travis Winters.
+        %span= published_note

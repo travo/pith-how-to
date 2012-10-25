@@ -1,0 +1,33 @@
+!!! 5
+%html
+  %head
+
+    %title Pith: tools all the way down.
+
+    %meta{ :charset => "utf-8" }/
+
+    /[if IE]
+      %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge;chrome=1" }
+
+    %meta{ :name => "robots", :content => "" }
+    %meta{ :name => "keywords", :content => "" }
+    %meta{ :name => "description", :content => "" }
+    %meta{ :name => "author", :content => "" }
+    %meta{ :name => "viewport", :content => "initial-scale=1.0" }
+
+    %link{ :rel => "stylesheet", :href => "css/styles.css" }/
+
+
+
+  %body
+
+    %article.content
+
+      = yield
+
+    %footer
+
+      %p
+        &copy; Travis Winters 2012
+        %br
+        %span= published_note
