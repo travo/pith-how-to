@@ -27,7 +27,7 @@ namespace "github" do
     tmpdir = "/tmp/build-pith-content"
     sh <<-BASH
       set -e -x
-      rm -fr #{tmpdir}; pith -i src -o #{tmpdir} build
+      rm -fr #{tmpdir}; pith -i . -o #{tmpdir} build
       git checkout gh-pages
       git fetch origin
       git reset --hard origin/gh-pages
