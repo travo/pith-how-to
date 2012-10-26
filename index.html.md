@@ -4,25 +4,23 @@ layout: "/_layout.html.haml"
 
 # Pith: tools all the way down.
 
-While we all like to work in [craftsman's time](http://www.lukew.com/ff/entry.asp?1603), it's equally important for us to use, develop and integrate tools into our work which help us focus on the real problems we're trying to solve.
+While we're all trying to work in [craftsman's time](http://www.lukew.com/ff/entry.asp?1603), it's equally important for us to use, develop and integrate tools into our work which help us focus on the real problems we're trying to solve.
 
-Beginners can find using these tools cumbersome, unwieldy and sometimes a frustrating diversion from practicing the fundamental aspects of their work. Experienced developers either go looking for or develop tools which can help elevate them from the repetition of basics and back into the realm of the core problem.
+Beginners can find using these tools cumbersome, unwieldy and sometimes a frustrating diversion from practicing the fundamental aspects of their work. Experienced developers look for or develop tools which can help elevate them from the repetition of basics and back into the realm of the core problem.
 
-Pith is a tool written by an experienced developer who got frustrated by not feeling elevated from the drudgery of maintaining his own website. He sought to combine some existing tools together so that he had something new that allowed him to easily manage and quickly publish his website.
+[Pith](http://github.com/mdub/pith) is a tool written by an experienced developer who got frustrated by not feeling elevated from the drudgery of maintaining his own website. Mike sought to combine some existing tools that he enjoyed using and as a result has created something new that allowed him (and us) to easily manage and quickly publish websites.
 
-As developers, it is natural for us to want to be close to the core elements of our website, but not too close to the nuts and bolts that we become distracted from the writing, design and core communication that we want to engage in.
+As developers, it is natural for us to want to be close to the core elements of our website, but not so close to the nuts and bolts that we become distracted from the writing, design and core communication that we want to engage in.
 
-Sometimes as developers we get frustrated using existing applications and platforms. At one end of the scale, they don't suit our needs or, at the other end of the scale are far too sophisticated for our web publishing needs.
+Pith is a powerful and light-weight website publishing tool. It combines SASS, HAML and Markdown (among a few other handy template formats) into a single Ruby Gem. Pith makes it easy for web developers to rapidly build out websites with multiple layouts and demanding information architecture.
 
-Pith is essentially a powerful and light-weight website publishing tool. It combines SASS, HAML and Markdown (among a few other handy template formats) into a single Ruby Gem. Pith makes it easy for web developers to rapidly build out websites with multiple layouts and demanding information architecture.
+You can use Pith for a range of applications; from wire framing and prototyping to managing and structuring the development of large projects. But best of all, I especially like using Pith to build websites.
 
-I like to use Pith for a range of applications; from wire framing and prototyping to managing and structuring the development of large projects. But best of all, I especially like using Pith to build websites.
-
-Now, if you're a fancy-pants developer, you can do a bunch of very clever things with Pith. By writing your own Ruby scripts you can start to explore dynamism and drawing content from API's and other sources. We'll explore how we might do something like that later.
+If you're a fancy-pants developer, you can do a bunch of very clever things with Pith. By writing your own Ruby scripts you can start to explore dynamism and drawing content from API's and other sources. We'll explore how we might do something like that later.
 
 When you're working with Pith, you can build your templates on demand. You can tell Pith to watch your working directory and build your templates as they're changed. More exciting still, Pith includes a small web-server, and you can tell Pith to serve your templates via a small local web server while you're changing and editing your code.
 
-Once you're done, you can drop the contents of your generated work straight onto your production web server. Home in time for nuts and beer.
+Once you're done, you can drop the contents of your generated work straight onto your production web server. Home in time for nuts and beer. Let's get started.
 
 ## Bootstrapping (nerd speak for getting-started)
 
@@ -32,7 +30,7 @@ In your favourite Ruby environment;
 
 Now you can follow the instructions on the helpful Pith website to get your environment set up. You'll need Ruby for sure, but once you install Pith, it comes with all the nifty bits and bobs to help you rapidly build out your ideas.
 
-The flexibility granted by using Pith is one of its greatest features. You can structure your website how ever you want, all your work is copied into the _out directory, completely unchanged. Any files you name with an extension that Pith recognises are processed and then published as well.
+The flexibility granted by using Pith is one of its greatest features. You can structure your website how ever you want, all your work is copied into the _out directory, completely unchanged. Any files you name with an extension that Pith recognises are processed and then published as well. Any folders and file names which are prefixed with an underscore are ignored.
 
 You can create a starting directory for your project, say `my-site` and inside that you add some files.
 
