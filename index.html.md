@@ -30,7 +30,7 @@ In your favourite Ruby environment;
 
 Now you can follow the instructions on the helpful Pith website to get your environment set up. You'll need Ruby for sure, but once you install Pith, it comes with all the nifty bits and bobs to help you rapidly build out your ideas.
 
-The flexibility granted by using Pith is one of its greatest features. You can structure your website how ever you want, all your work is copied into the _out directory, completely unchanged. Any files you name with an extension that Pith recognises are processed and then published as well. Any folders and file names which are prefixed with an underscore are ignored.
+The flexibility granted by using Pith is one of its greatest features. You can structure your website in any way you prefer, all your work is copied into the _out directory, completely unchanged. Any files you name with an extension that Pith recognises are processed and then published as well. Any folders and file names which are prefixed with an underscore `_` are ignored.
 
 You can create a starting directory for your project, say `my-site` and inside that you add some files.
 
