@@ -146,3 +146,11 @@ Which you can then include in your HAML templates;
       %p
         Written by Travis Winters.
         %span= published_note
+
+
+## Doing great things quickly
+
+There's a lot to take in here. I've assumed that you're the kind of experienced and capable developer who is on the look out for useful tools. Tools that help you rise above the drudgery of your work and back into the space that allows you to think of real problems, not ones like, "OMG how am I going to manage this sprawling website and it's content".
+
+There are other tools like Pith out there, such as [Jeckyll](http://jekyllrb.com/). Many tend to live in the realm of nerds, and bless 'em all. The reason I like Pith is that it's more oriented to fulfilling a complex need, simply — publishing websites quickly, using your favourite tools.
+
