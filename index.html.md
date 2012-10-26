@@ -40,7 +40,7 @@ You can create a starting directory for your project, say `my-site` and inside t
         logo.png
       index.html.haml
 
-Notice the _pith directory? That's there to hold any configuration files or Ruby scripts you might want to create later. It doesn't get included in your output directory.
+Notice the _pith directory? That's there to hold any configuration files or Ruby scripts you might want to create later. It doesn't get included in your output directory. I promise I'll tell you how to use the `_pith` directory at the end.
 
 Once you've edited your files, you can run the `pith build` command to generate your website.
 
@@ -123,7 +123,9 @@ C'mon! — that's fun. You can do the same with your SASS (as you always have wi
 
 ## Getting clever: Ruby
 
-In your `_pith/` directory you can place a config.rb file into which you can include a number of nifty helpers which can run when the partials are generated.
+Okay, as promised, this is how we use the `_pith` directory.
+
+In your `_pith` directory you can place a config.rb file into which you can include a number of nifty helper methods which can run when the partials are generated.
 
 Here's a simple example;
 
