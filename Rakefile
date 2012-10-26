@@ -1,21 +1,21 @@
 task "default" => "watch"
 
 require "rake/clean"
-CLEAN << "_out"
+CLEAN << "source/_out"
 
 desc "build the site"
 task "build" do
-  sh("pith -i . build")
+  sh("pith -i source build")
 end
 
 desc "build the site, and rebuild incrementally when stuff changes"
 task "watch" do
-  sh("pith -i . watch")
+  sh("pith -i source watch")
 end
 
 desc "serve the site at http://localhost:4321, whilst rebuilding incrementally"
 task "serve" do
-  sh("pith -i . serve")
+  sh("pith -i source serve")
 end
 
 namespace "github" do
@@ -27,7 +27,7 @@ namespace "github" do
     tmpdir = "/tmp/build-pith-content"
     sh <<-BASH
       set -e -x
-      rm -fr #{tmpdir}; pith -i . -o #{tmpdir} build
+      rm -fr #{tmpdir}; pith -i source -o #{tmpdir} build
       git checkout gh-pages
       git fetch origin
       git reset --hard origin/gh-pages
